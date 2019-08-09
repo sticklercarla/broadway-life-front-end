@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router } from "react-router-dom";
+import { connect } from "react-redux";
+import userActions from "./Redux/actions";
+import Routes from "./Routes";
+import Nav from "./Components/Nav";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  componentDidMount() {
+    if (localStorage.token) {
+      const { userProfileFromDB } = this.props;
+      userProfileFromDB();
+    }
+  }
+
+  render(){
+    return (
+      <Router>
+        <div className="body">
+          <header className="header">
+            <Nav />
+          </header>
+          <div className="main">
+            <Routes />
+          </div>
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({ user: state });
+
+const mapDispatchToProps = {
+  userProfileFromDB: userActions.profileUserFromDB
+};
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
