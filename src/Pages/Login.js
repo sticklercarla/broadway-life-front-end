@@ -12,10 +12,12 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.props)
     const { loginUser } = this.props;
-    loginUser(this.state);
-    this.props.history.push("/profile")
+    loginUser(this.state).then(()=> {
+      if (localStorage.token) {
+        this.props.history.push("/profile")
+      }
+    })
   };
 
   render() {

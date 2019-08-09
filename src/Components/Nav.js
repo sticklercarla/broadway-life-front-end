@@ -10,12 +10,17 @@ const Nav = props => {
   };
   return (
     <nav className="nav">
-        <p className="nav-p">Welcome {props.user ? props.user.name : null }</p>
+        
         <div className="nav-components">
-            {localStorage.token ? <Link to="/" className="link">Home</Link> : null}
-            {localStorage.token ? null : <Link to="/signup" className="link">Signup</Link>}
-            {localStorage.token ? null : <Link to="/login" className="link">Login</Link>}
-            {localStorage.token ? <Link to="/login" onClick={handleLogout} className="link">Logout</Link> : null}
+            <div>{localStorage.token ? <Link to="/" className="link">Home</Link> : <Link to="/signup" className="link">Signup</Link>}</div>
+            <div>{localStorage.token ? <Link to="/login" onClick={handleLogout} className="link">Logout</Link> : <Link to="/login" className="link">Login</Link>}</div>
+        </div>
+        <p className="nav-p">Welcome {props.user ? props.user.name : null }</p>
+        <div className="profile-nav">
+            {localStorage.token ? (<div>Log New Audition</div> ) : null }
+            {localStorage.token ? (<div>View/Edit Auditions</div> ) : null }
+            {localStorage.token ? (<div>View Audition Stats</div> ) : null }
+            {localStorage.token ? (<div>Audition Song Book</div> ) : null }
         </div>
     </nav>
   );

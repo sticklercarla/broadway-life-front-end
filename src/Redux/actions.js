@@ -34,7 +34,7 @@ const profileUserFromDB = () => dispatch => {
   };
   
 const loginUserToDB = user => dispatch => {
-    fetch('http://localhost:3000/login', {
+    return fetch('http://localhost:3000/login', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -42,6 +42,10 @@ const loginUserToDB = user => dispatch => {
         body: JSON.stringify(user)
     }).then(res => res.json())
     .then(data => {
+        if (!data.token) {
+            alert("Wrong username of password")
+            return
+        }
         localStorage.token = data.token;
         dispatch(loginUserAction(data.user))
     })
