@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import userActions from "../Redux/actions";
+import userActions from "../Actions/userActions";
+import pageActions from "../Actions/pageActions";
 
 const Nav = props => {
+
   const handleLogout = () => {
     const { logoutUserFromStore } = props;
     logoutUserFromStore();
   };
+
+  const handlePage = (e) => {
+    props.updatePage(e.target.name)
+  }
+
   return (
     <nav className="nav">
         
@@ -17,18 +24,20 @@ const Nav = props => {
         </div>
         <p className="nav-p">Welcome {props.user ? props.user.name : null }</p>
         <div className="profile-nav">
-            {localStorage.token ? (<div>Log New Audition</div> ) : null }
-            {localStorage.token ? (<div>View/Edit Auditions</div> ) : null }
-            {localStorage.token ? (<div>View Audition Stats</div> ) : null }
-            {localStorage.token ? (<div>Audition Song Book</div> ) : null }
+            {localStorage.token ? (<button name="log_audition" onClick={handlePage}>Log New Audition</button  > ) : null }
+            {localStorage.token ? (<button name="view_edit_audition" onClick={handlePage}>View/Edit Auditions</button  > ) : null }
+            {localStorage.token ? (<button name="audition_stats" onClick={handlePage}>View Audition Stats</button  > ) : null }
+            {localStorage.token ? (<button name="song_book" onClick={handlePage}>Audition Song Book</button  > ) : null }
         </div>
     </nav>
   );
 };
 
 const mapStateToProps = state => ({ user: state });
+
 const mapDispatchToProps = {
-  logoutUserFromStore: userActions.logoutUserFromStore
+  logoutUserFromStore: userActions.logoutUserFromStore,
+  updatePage: pageActions.updatePage
 };
 
 export default connect(

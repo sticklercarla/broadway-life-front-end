@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
 import { connect } from "react-redux";
-import userActions from "./Redux/actions";
+import userActions from "./Actions/userActions";
 import Routes from "./Routes";
 import Nav from "./Components/Nav";
 import './App.css';
