@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+h2 {
+  margin-bottom: 0;
+}
+
 .body {
   display: flex;
   flex-direction: column;
@@ -13,6 +17,43 @@ header{
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+}
+.profile-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-flipper {
+  align-self: flex-end;
+  border: 1px black solid;
+  border-radius: 25px;
+  padding: 15px;
+  background-color: white;
+  color: black;
+  box-shadow: 3px 3px 10px white;
+}
+
+.card-flipper:hover {
+  background-color: lightgrey;
+  cursor: grab;
+}
+
+.card-flipper:active {
+  cursor: grabbing;
+}
+
+h5 {
+  margin: 0;
+}
+
+.title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.nav-p {
+  margin-top: 0;
 }
 
 .nav-p, form{
@@ -31,11 +72,49 @@ header{
   justify-content: space-between;
 }
 
-.link {
+.link, .nav-button{
   border: 1px black solid;
-  box-shadow: 5px 5px 10px white;
+  box-shadow: 3px 3px 10px white;
   border-radius: 25px;
   padding: 15px;
   background-color: white;
-  /* display: block; */
+  cursor: grab;
+}
+
+.link:hover {
+  background-color: lightgray;
+}
+
+.nav-button:hover {
+  background-color: lightgray;
+}
+
+.link:active {
+  cursor: grabbing;
+}
+
+.nav-button:active {
+  cursor: grabbing;
+}
+
+.Song-Container, .Audition-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.song-card, .audition-card {
+  color: white;
+  background-color: #282c34;
+  width: 20rem;
+  height: 20rem;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  border-radius: 25px;
+  justify-content: space-between;
+  box-shadow: 3px 3px 10px black;
 }

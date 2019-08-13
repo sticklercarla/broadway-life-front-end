@@ -5,24 +5,26 @@ import { connect } from "react-redux"
 
 class SongBook extends React.Component {
 
-    componentDidMount = () => {
-        console.log(this.props)
+    songs = () => {
+        return this.props.song_book.map( songObj => <Song key={songObj.id} song={songObj} />)
     }
 
     render(){
         return(
             <div>
-                <Song />
-                <SongForm />
+                <div>
+                    <h2>Add Song To Your Book</h2>
+                    <SongForm />
+                </div>
+                <div className="Song-Container">
+                    {this.songs()}
+                </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    console.log(state)
-}
-
+const mapStateToProps = state => ({ song_book: state.songBookReducer.song_book})
 
 
 export default connect(

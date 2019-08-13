@@ -23,13 +23,13 @@ class Profile extends React.Component {
       case 'song_book':
         return <SongBook />
       default:
-        return <SongBook />
+        return <UserShowPage />
     }
   }
 };
 
 const mapStateToProps = state => ({
-  page: state.pageReducer
+  page: state.pageReducer.page
 })
 
 

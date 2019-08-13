@@ -1,10 +1,64 @@
 import React from 'react';
+import songBookReducer from '../Reducers/songBookReducer';
+import { connect } from "react-redux";
+import songBookActions from "../Actions/songBookActions";
 
-const SongForm = props => {
+class SongForm extends React.Component {
 
-    return (
-        <div>HI FROM SONGFORM</div>
-    )
+    state = {
+        title: "",
+        composer: "",
+        lyricist: "",
+        performed_by: "",
+        style: "Contemporary",
+        user_id: this.props.user.id
+    }
+    
+    onChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.createNewSongToDB(this.state)
+    }
+    
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}> 
+                <input type="text" name="title" value={this.state.title} onChange={this.onChange} placeholder="title"/>
+                <input type="text" name="composer" value={this.state.composer} onChange={this.onChange} placeholder="composer"/>
+                <input type="text" name="lyricist" value={this.state.lyricist} onChange={this.onChange} placeholder="lyricist"/>
+                <input type="text" name="performed_by" value={this.state.performed_by} onChange={this.onChange} placeholder="performed by"/>
+                <select name="style" value={this.state.style} onChange={this.onChange}>
+                    <option name="style" value="Contemporary">Contemporary</option>
+                    <option name="style" value="Disney">Disney</option>
+                    <option name="style" value="Doo Wop">Doo Wop</option>
+                    <option name="style" value="Golden Age">Golden Age</option>
+                    <option name="style" value="Jazz Standard">Jazz Standard(American SongBook)</option>
+                    <option name="style" value="Jukebox">Jukebox</option>
+                    <option name="style" value="Musical Theatre Pop/Rock">Musical Theatre Pop/Rock</option>
+                    <option name="style" value="Operetta">Operetta</option>
+                    <option name="style" value="Pop">Pop</option>
+                    <option name="style" value="Rock">Rock</option>
+                    <option name="style" value="Sondheim">Sondheim</option>
+                </select>
+                <input type="submit" value="Submit" />
+            </form>
+        )
+    }
 }
 
-export default SongForm
+const mapStateToProps = state => ({ user: state.userReducer })
+
+const mapDispatchToProps = {
+    createNewSongToDB: songBookActions.createNewSongToDB,
+  };
+
+
+export default connect (
+    mapStateToProps,
+    mapDispatchToProps
+)(SongForm);

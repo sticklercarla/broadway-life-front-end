@@ -1,4 +1,6 @@
 // Action creators
+import songBook from './songBookActions';
+import allAuditions from './auditionActions'
 
 const loginUserAction = user => ({
     type: "LOGIN",
@@ -29,7 +31,11 @@ const profileUserFromDB = () => dispatch => {
     })
       .then(r => r.json())
       .then(user => {
-        dispatch(profileUser(user));
+          console.log(user.songs)
+        dispatch(profileUser(user))
+        dispatch(songBook.getSongs(user.songs))
+        dispatch(allAuditions.getAuditions(user.auditions))
+       
       });
   };
   
@@ -46,8 +52,11 @@ const loginUserToDB = user => dispatch => {
             alert("Wrong username of password")
             return
         }
+        console.log(data)
         localStorage.token = data.token;
         dispatch(loginUserAction(data.user))
+        dispatch(songBook.getSongs(data.user.songs))
+        dispatch(allAuditions.getAuditions(data.user.auditions))
     })
 }
 
