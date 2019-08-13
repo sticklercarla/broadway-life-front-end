@@ -1,19 +1,13 @@
 
-const getSongs = (songs) => {
-    console.log(songs)
-    return {
+const getSongs = (songs) => ({
         type: "GET_SONGS",
         song_book: songs
-    }
-}
+})
 
-const addNewSong = (song) => {
-    console.log(song)
-    return {
+const addNewSong = (song) => ({
         type: "ADD_SONG",
         song: song
-    }
-}
+})
 
 const createNewSongToDB = song => dispatch => {
     console.log(song)

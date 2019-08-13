@@ -16,7 +16,7 @@ class Audition extends React.Component {
             <div className="audition-card" >
                 {this.state.cardFlipped ?
                 (<div>
-                    <UpdateAudition />
+                    <UpdateAudition handleClick={this.handleClick} audition={this.props.audition}/>
                 </div>)
                 :
                 (<div className="card-info">

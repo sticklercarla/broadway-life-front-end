@@ -5,9 +5,15 @@ import ViewEditAudition from '../Containers/ViewEditAudition'
 import AuditionStats from '../Containers/AuditionStats'
 import SongBook from '../Containers/SongBook'
 import AuditionForm from '../Containers/AuditionForm'
+import castingOfficeActions from '../Actions/castingOfficeActions'
+import auditionLocationActions from '../Actions/auditionLocationActions'
 
 class Profile extends React.Component {
 
+  componentDidMount = () => {
+    this.props.casting_offices()
+    this.props.audition_locations()
+  }
 
   render () {
     console.log(this.props.page)
@@ -32,6 +38,10 @@ const mapStateToProps = state => ({
   page: state.pageReducer.page
 })
 
+const mapDispatchToProps = {
+  casting_offices: castingOfficeActions.getCastingOfficesFromDB,
+  audition_locations: auditionLocationActions.getAuditionLocationsFromDB
+}; 
 
 
-export default connect(mapStateToProps, null)(Profile)
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

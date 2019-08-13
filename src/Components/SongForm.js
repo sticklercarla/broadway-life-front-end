@@ -1,5 +1,5 @@
 import React from 'react';
-import songBookReducer from '../Reducers/songBookReducer';
+
 import { connect } from "react-redux";
 import songBookActions from "../Actions/songBookActions";
 
@@ -55,7 +55,7 @@ const mapStateToProps = state => ({ user: state.userReducer })
 
 const mapDispatchToProps = {
     createNewSongToDB: songBookActions.createNewSongToDB,
-  };
+};
 
 
 export default connect (

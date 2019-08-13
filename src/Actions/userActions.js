@@ -13,8 +13,7 @@ const logoutUser = () => ({
 });
 
 const createUser = user => ({
-    type: "SIGNUP",
-    payload: user
+    type: "SIGNUP"
 });
 
 const profileUser = user => ({
@@ -31,7 +30,6 @@ const profileUserFromDB = () => dispatch => {
     })
       .then(r => r.json())
       .then(user => {
-          console.log(user.songs)
         dispatch(profileUser(user))
         dispatch(songBook.getSongs(user.songs))
         dispatch(allAuditions.getAuditions(user.auditions))
@@ -52,7 +50,6 @@ const loginUserToDB = user => dispatch => {
             alert("Wrong username of password")
             return
         }
-        console.log(data)
         localStorage.token = data.token;
         dispatch(loginUserAction(data.user))
         dispatch(songBook.getSongs(data.user.songs))
@@ -61,7 +58,7 @@ const loginUserToDB = user => dispatch => {
 }
 
 const createNewUserToDB = user => dispatch => {
-    fetch('http://localhost:3000/users', {
+    return fetch('http://localhost:3000/users', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -70,8 +67,7 @@ const createNewUserToDB = user => dispatch => {
         body: JSON.stringify(user)
     }).then(res => res.json)
     .then(data => {
-        dispatch(createUser(data.user))
-        
+        dispatch(createUser(data.user)) 
     })
 }
 

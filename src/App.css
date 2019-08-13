@@ -11,6 +11,12 @@ h2 {
   flex-direction: column;
 }
 
+label {
+  font-size: 16px;
+}
+span {
+  font-size: 16px;
+}
 header{
   background-color: #282c34;
   display: flex;
@@ -22,6 +28,14 @@ header{
 .profile-nav {
   display: flex;
   justify-content: space-between;
+}
+
+.audition-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+
 }
 
 .card-flipper {
@@ -41,6 +55,8 @@ header{
 
 .card-flipper:active {
   cursor: grabbing;
+  box-shadow: 1px 1px 5px white;
+  transform: translateY(4px);
 }
 
 h5 {
@@ -91,10 +107,14 @@ h5 {
 
 .link:active {
   cursor: grabbing;
+  box-shadow: 1px 1px 5px white;
+  transform: translateY(4px);
 }
 
 .nav-button:active {
   cursor: grabbing;
+  box-shadow: 1px 1px 5px white;
+  transform: translateY(4px);
 }
 
 .Song-Container, .Audition-Container {
