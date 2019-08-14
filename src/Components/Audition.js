@@ -21,6 +21,8 @@ class Audition extends React.Component {
                 :
                 (<div className="card-info">
                     <h1>{this.props.audition.musical_title}</h1>
+                    <p>Date: {this.props.audition.date}</p>
+                    <p>Time: {this.props.audition.time}</p>
                     <p>Style: {this.props.audition.style}</p>
                     <p>Song Length: {this.props.audition.song_length}</p>
                     <p>{this.props.audition.appointment ? "Appointment" : "Open-Call"}</p>
