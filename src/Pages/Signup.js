@@ -7,7 +7,8 @@ class Signup extends React.Component {
         name: "",
         username: "",
         password: "",
-        password_confirmation: ""
+        password_confirmation: "",
+        profile_pic: "/images/default_avataaar.png"
     };
 
     handleChange = e => {

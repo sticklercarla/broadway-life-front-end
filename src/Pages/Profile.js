@@ -5,6 +5,8 @@ import ViewEditAudition from '../Containers/ViewEditAudition'
 import AuditionStats from '../Containers/AuditionStats'
 import SongBook from '../Containers/SongBook'
 import AuditionForm from '../Containers/AuditionForm'
+import Login from './Login'
+import AccountDetails from '../Containers/AccountDetails'
 import castingOfficeActions from '../Actions/castingOfficeActions'
 import auditionLocationActions from '../Actions/auditionLocationActions'
 
@@ -18,8 +20,10 @@ class Profile extends React.Component {
   render () {
     console.log(this.props.page)
     switch(this.props.page) {
+      case "login":
+        return <Login />
       case "profile":
-        return <UserShowPage />
+        return <UserShowPage />;
       case "log_audition":
         return <AuditionForm />
       case 'view_edit_audition':
@@ -28,8 +32,10 @@ class Profile extends React.Component {
         return <AuditionStats />
       case 'song_book':
         return <SongBook />
+      case 'edit_user':
+        return <AccountDetails />
       default:
-        return <UserShowPage />
+        return <Login />
     }
   }
 };

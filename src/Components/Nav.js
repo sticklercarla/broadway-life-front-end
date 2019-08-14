@@ -9,6 +9,7 @@ const Nav = props => {
   const handleLogout = () => {
     const { logoutUserFromStore } = props;
     logoutUserFromStore();
+    props.updatePage("login")
   };
 
   const handlePage = (e) => {
@@ -24,12 +25,13 @@ const Nav = props => {
         </div>
         <h5 className="title">livin' that</h5>
         <h1 className="title">BROADWAY AUDITION LIFE</h1>
-        <p className="nav-p">Welcome {props.user ? props.user.name : null }</p>
+        <p className="nav-p">{localStorage.token ? (<div className="Welcome-div"><img className="image" alt="default profile pic" src={props.user.profile_pic}/>   <h4 className="user-dsp-info">Welcome {props.user.name} </h4></div>) : null }</p>
         <div className="profile-nav">
             {localStorage.token ? (<button className="nav-button" name="log_audition" onClick={handlePage}>Log New Audition</button> ) : null }
             {localStorage.token ? (<button className="nav-button" name="view_edit_audition" onClick={handlePage}>View/Edit Auditions</button> ) : null }
             {localStorage.token ? (<button className="nav-button" name="audition_stats" onClick={handlePage}>View Audition Stats</button> ) : null }
             {localStorage.token ? (<button className="nav-button" name="song_book" onClick={handlePage}>Audition Song Book</button> ) : null }
+            {localStorage.token ? (<button className="nav-button" name="edit_user" onClick={handlePage}>Account Details</button> ) : null }
         </div>
     </nav>
   );

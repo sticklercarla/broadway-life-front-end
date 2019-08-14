@@ -9,7 +9,6 @@ const loginUserAction = user => ({
 
 const logoutUser = () => ({
     type: "LOGOUT"
-
 });
 
 const createUser = user => ({
@@ -20,6 +19,16 @@ const profileUser = user => ({
     type: "PROFILE",
     payload: user
 });
+
+const updateUser = user => ({
+        type: "UPDATE_USER",
+        new_user: user
+    })
+
+const deleteUser = user_id => ({
+    type: "DELETE_USER",
+    deleted_user_id: user_id
+})
 
 //FETCH
 
@@ -65,9 +74,23 @@ const createNewUserToDB = user => dispatch => {
             "Accept": "application/json"
         },
         body: JSON.stringify(user)
-    }).then(res => res.json)
+    }).then(res => res.json())
     .then(data => {
         dispatch(createUser(data.user)) 
+    })
+}
+
+const updateUserToDB = user => dispatch => {
+    fetch(`http://localhost:3000/users/${user.user_id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(user)
+    }).then(res => res.json())
+    .then(data => {
+        dispatch(updateUser(data))
     })
 }
 
@@ -76,7 +99,19 @@ const logoutUserFromStore = () => dispatch => {
     dispatch(logoutUser());
 }
 
+
+const deleteUserFromDB = user_id => dispatch => {
+    return fetch(`http://localhost:3000/users/${user_id}`, {
+        method: "DELETE",
+    }).then(() => {
+        localStorage.clear()
+        dispatch(deleteUser(user_id))
+    })
+}
+
 export default {
+    deleteUserFromDB,
+    updateUserToDB,
     loginUserToDB,
     createNewUserToDB,
     profileUserFromDB,

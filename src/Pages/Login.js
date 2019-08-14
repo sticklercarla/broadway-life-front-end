@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import userActions from "../Actions/userActions";
+import pageActions from "../Actions/pageActions";
 
 class Login extends Component {
   state = {
@@ -16,6 +17,7 @@ class Login extends Component {
     loginUser(this.state).then(()=> {
       if (localStorage.token) {
         this.props.history.push("/profile")
+        this.props.updatePage("profile")
       }
     })
   };
@@ -47,7 +49,8 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = {
-  loginUser: userActions.loginUserToDB
+  loginUser: userActions.loginUserToDB,
+  updatePage: pageActions.updatePage
 };
 
 const mapStateToProps = state => ({ user: state });

@@ -17,6 +17,28 @@ label {
 span {
   font-size: 16px;
 }
+.Welcome-div {
+  display: flex;
+  justify-content: center;
+}
+
+.user-dsp-info {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.update-user-info {
+  text-align: center
+}
+
+.image {
+  max-height: 75px;
+  max-width: 75px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 25px;
+}
+
 header{
   background-color: #282c34;
   display: flex;
