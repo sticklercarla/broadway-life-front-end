@@ -148,8 +148,6 @@ h5 {
 .song-card, .audition-card {
   color: white;
   background-color: #282c34;
-  width: 20rem;
-  height: 20rem;
   margin: 20px;
   text-align: center;
   padding: 20px;
@@ -159,4 +157,24 @@ h5 {
   border-radius: 25px;
   justify-content: space-between;
   box-shadow: 3px 3px 10px black;
+}
+
+.song-card {
+  width: 20rem;
+  height: 20rem;
+}
+
+.audition-card {
+  width: 20rem;
+  height: 25rem;
+}
+
+.card-info {
+  background-color: gray;
+  color: white;
+  padding-bottom: 10px;
+}
+.booked-it {
+  background-color: purple;
+  padding-bottom: 10px;
 }

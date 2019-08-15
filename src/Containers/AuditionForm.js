@@ -12,7 +12,7 @@ class AuditionForm extends React.Component {
         time: "",
         date: "",
         song_id: "",
-        song_length: "",
+        song_length: "8 Bars",
         casting_office_id: 1,
         audition_location_id: 1,
         appointment: false,
