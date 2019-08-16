@@ -34,22 +34,26 @@ span {
 .image {
   max-height: 75px;
   max-width: 75px;
-  border: 1px solid white;
+  border: 1px solid black;
   background-color: white;
   border-radius: 25px;
 }
 
 header{
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-image: url("/images/a-chorus-line-jump-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -240px;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 20px;
+  color: black;
+  
 }
 .profile-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .audition-form {
@@ -87,11 +91,13 @@ h5 {
 
 .title {
   margin-top: 0;
+  margin-bottom: .5em;
   text-align: center;
 }
 
 .nav-p {
   margin-top: 0;
+  margin-bottom:0;
 }
 
 .nav-p, form{
@@ -101,11 +107,19 @@ h5 {
 .nav {
   display: flex;
   flex-direction: column;
+  background-color: rgba(248, 247, 216, 0.7);
+  width: 100%;
+  margin-top: -20px;
+  margin-left: -20px;
+  padding: 20px;
+  padding-bottom: 20px;
 }
 
 .nav-components{
   padding: 20px;
   margin: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -170,11 +184,37 @@ h5 {
 }
 
 .card-info {
-  background-color: gray;
-  color: white;
+  box-shadow: 3px 3px 10px white;
   padding-bottom: 10px;
+  border-radius: 25px;
 }
-.booked-it {
-  background-color: purple;
-  padding-bottom: 10px;
+
+.pie {
+  padding: 10px;
+  width: 30rem;
+  height: 30rem;
+  padding: 25px;
+  border: 1px black solid;
+  font-size: 10px;
+}
+
+.charts {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.chart-info {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  height: 30rem;
+}
+
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+  text-align: center;
 }

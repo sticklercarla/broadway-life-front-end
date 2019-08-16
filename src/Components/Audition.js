@@ -52,7 +52,6 @@ class Audition extends React.Component {
     }
 
     render() {
-        let className = (this.props.audition.booked === true ? "booked-it" : "card-info")
         return (
             <div className="audition-card" >
                 {this.state.cardFlipped ?
@@ -60,8 +59,8 @@ class Audition extends React.Component {
                     <UpdateAudition handleClick={this.handleClick} audition={this.props.audition}/>
                 </div>)
                 :
-                (<div className={className}>
-                    <h1>{this.props.audition.musical_title}</h1>
+                (<div className="card-info">
+                    <h1>{this.props.audition.booked === true ? "⭐️" : null} {this.props.audition.callback === true ? "✰" : null} {this.props.audition.musical_title}</h1>
                     <span>{this.props.audition.appointment ? "Appointment" : "Open-Call"}</span><br/>
                     <span>Style: {this.props.audition.style}</span>
                     <div>
@@ -72,9 +71,9 @@ class Audition extends React.Component {
                     <span>Song Length: {this.props.audition.song_length}</span><br />
                     <span>Casting Office: {this.castingOffice()}</span><br/>
                     <span>Location: {this.auditionLocation()}</span><br/>
-                    <span>{this.props.audition.sides ? "Sides Given" : "No Sides"}</span><br/>
-                    {this.props.audition.sides === true ? (this.props.audition.sides_performed === true ? <span>Sides Performed</span> : <span>Sides Not Performed</span> ) : null }
-                    
+                    <span>{this.props.audition.sides ? "Sides Given: " : "No Sides"}</span>
+                    {this.props.audition.sides === true ? (this.props.audition.sides_performed === true ? <span>Performed</span> : <span>Not Performed</span> ) : null } <br/>
+                    <span>Notes: {this.props.audition.notes ? this.props.audition.notes : null }</span>
                 </div>)
                 }
                 <div className="card-flipper" onClick={this.handleClick}>{this.state.cardFlipped ? "VIEW CARD" : "UPDATE ME"}</div>

@@ -50,7 +50,7 @@ class ViewEditAudition extends React.Component {
                         <option value="not_called_back">Not Called Back</option>
                     </select>
                 </form>
-                <h2>Purple Cards = Booked Auditions</h2>
+                <h2>⭐️ - Booked It! | ✰ - Call Back</h2>
                 <div className="Audition-Container">
                     
                     {this.auditions()}

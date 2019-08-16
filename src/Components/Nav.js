@@ -21,11 +21,13 @@ const Nav = props => {
         
         <div className="nav-components">
             <div>{localStorage.token ? <button name="profile" onClick={handlePage} className="link">Home</button> : <Link to="/signup" className="link">Signup</Link>}</div>
+            <div>
+              <h5 className="title">livin' that</h5>
+              <h1 className="title">BROADWAY AUDITION LIFE</h1>
+              <p className="nav-p">{localStorage.token ? (<div className="Welcome-div"><img className="image" alt="default profile pic" src={props.user.profile_pic}/>   <h4 className="user-dsp-info">Welcome {props.user.name} </h4></div>) : null }</p>
+            </div>
             <div>{localStorage.token ? <Link to="/login" onClick={handleLogout} className="link">Logout</Link> : <Link to="/login" className="link">Login</Link>}</div>
         </div>
-        <h5 className="title">livin' that</h5>
-        <h1 className="title">BROADWAY AUDITION LIFE</h1>
-        <p className="nav-p">{localStorage.token ? (<div className="Welcome-div"><img className="image" alt="default profile pic" src={props.user.profile_pic}/>   <h4 className="user-dsp-info">Welcome {props.user.name} </h4></div>) : null }</p>
         <div className="profile-nav">
             {localStorage.token ? (<button className="nav-button" name="log_audition" onClick={handlePage}>Log New Audition</button> ) : null }
             {localStorage.token ? (<button className="nav-button" name="view_edit_audition" onClick={handlePage}>View/Edit Auditions</button> ) : null }
