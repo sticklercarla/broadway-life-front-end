@@ -131,6 +131,8 @@ h5 {
   padding: 15px;
   background-color: white;
   cursor: grab;
+  font-size: 12px;
+  text-decoration: none;
 }
 
 .link:hover {
@@ -160,8 +162,8 @@ h5 {
 }
 
 .song-card, .audition-card {
-  color: white;
-  background-color: #282c34;
+  color: black;
+  background-color: white;
   margin: 20px;
   text-align: center;
   padding: 20px;
@@ -171,6 +173,16 @@ h5 {
   border-radius: 25px;
   justify-content: space-between;
   box-shadow: 3px 3px 10px black;
+}
+
+.song-card:hover {
+  transform: translateY(5px);
+  box-shadow: 1px 1px 8px black;
+}
+
+.audition-card:hover {
+  transform: translateY(5px);
+  box-shadow: 1px 1px 8px black;
 }
 
 .song-card {
@@ -202,6 +214,10 @@ h5 {
   display: flex;
   justify-content: space-around;
   text-align: center;
+}
+
+.charts:hover {
+  transform: translateY(4px);
 }
 
 .chart-info {

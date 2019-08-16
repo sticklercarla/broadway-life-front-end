@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux"
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryAnimation, VictoryLabel} from 'victory';
 
 class UserShowPage extends React.Component {
 
+    
 
     callBacks = () => {
         return this.props.auditions.filter(song => song.callback === true)
