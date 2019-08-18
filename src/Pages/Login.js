@@ -25,9 +25,10 @@ class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="login-form">
           <h2>Login</h2>
           <input
+            className="login-input"
             type="text"
             onChange={this.handleChange}
             name="username"
@@ -35,13 +36,17 @@ class Login extends Component {
             placeholder="username"
           />
           <input
+            className="login-input"
             type="password"
             onChange={this.handleChange}
             name="password"
             value={this.state.password}
             placeholder="password"
           />
-          <input type="submit" />
+          <input 
+            className="login-button"
+            type="submit" 
+          />
         </form>
       </React.Fragment>
     );

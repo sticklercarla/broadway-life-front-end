@@ -33,9 +33,10 @@ class Signup extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="signup-form">
                     <h2>Create New Account</h2>
                     <input
+                        className="login-input"
                         type="text"
                         onChange={this.handleChange}
                         name="name"
@@ -43,6 +44,7 @@ class Signup extends React.Component {
                         placeholder="first name"
                     />
                     <input
+                        className="login-input"
                         type="text"
                         onChange={this.handleChange}
                         name="username"
@@ -50,6 +52,7 @@ class Signup extends React.Component {
                         placeholder="username"
                     />
                     <input
+                        className="login-input"
                         type="password"
                         onChange={this.handleChange}
                         name="password"
@@ -57,13 +60,17 @@ class Signup extends React.Component {
                         placeholder="password"
                     />
                     <input 
+                        className="login-input"
                         type="password"
                         onChange={this.handleChange}
                         name="password_confirmation"
                         value={this.state.password_confirmation}
                         placeholder="confirm password"
                     />
-                    <input type="submit" />
+                    <input 
+                        className="login-button"
+                        type="submit" 
+                    />
                 </form>
             </React.Fragment>
         )

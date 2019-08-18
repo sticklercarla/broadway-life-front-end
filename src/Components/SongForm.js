@@ -27,7 +27,7 @@ class SongForm extends React.Component {
     
     render() {
         return (
-            <form onSubmit={this.handleSubmit}> 
+            <form onSubmit={this.handleSubmit} className="song-form"> 
                 <input type="text" name="title" value={this.state.title} onChange={this.onChange} placeholder="title"/>
                 <input type="text" name="composer" value={this.state.composer} onChange={this.onChange} placeholder="composer"/>
                 <input type="text" name="lyricist" value={this.state.lyricist} onChange={this.onChange} placeholder="lyricist"/>

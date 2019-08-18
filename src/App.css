@@ -64,14 +64,14 @@ header{
 
 }
 
-.card-flipper {
+.card-flipper{
   align-self: flex-end;
   border: 1px black solid;
   border-radius: 25px;
   padding: 15px;
   background-color: white;
   color: black;
-  box-shadow: 3px 3px 10px white;
+  box-shadow: 3px 3px 10px black;
 }
 
 .card-flipper:hover {
@@ -81,7 +81,7 @@ header{
 
 .card-flipper:active {
   cursor: grabbing;
-  box-shadow: 1px 1px 5px white;
+  box-shadow: 1px 1px 5px black;
   transform: translateY(4px);
 }
 
@@ -107,7 +107,7 @@ h5 {
 .nav {
   display: flex;
   flex-direction: column;
-  background-color: rgba(248, 247, 216, 0.7);
+  background-color: rgba(252, 252, 248, 0.7);
   width: 100%;
   margin-top: -20px;
   margin-left: -20px;
@@ -124,9 +124,9 @@ h5 {
   justify-content: space-between;
 }
 
-.link, .nav-button{
+.link, .nav-button, .login-button, .audition-button{
   border: 1px black solid;
-  box-shadow: 3px 3px 10px white;
+  box-shadow: 3px 3px 10px black;
   border-radius: 25px;
   padding: 15px;
   background-color: white;
@@ -135,8 +135,23 @@ h5 {
   text-decoration: none;
 }
 
+.login-button {
+  width: 100px;
+  margin: auto;
+}
+
+.audition-button {
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .link:hover {
   background-color: lightgray;
+}
+
+.link:visited {
+  color: black;
 }
 
 .nav-button:hover {
@@ -145,13 +160,22 @@ h5 {
 
 .link:active {
   cursor: grabbing;
-  box-shadow: 1px 1px 5px white;
+  box-shadow: 1px 1px 5px black;
   transform: translateY(4px);
+}
+
+button:focus {
+    outline: none;
+}
+
+
+.nav-button:visited {
+  border: none;
 }
 
 .nav-button:active {
   cursor: grabbing;
-  box-shadow: 1px 1px 5px white;
+  box-shadow: 1px 1px 5px black;
   transform: translateY(4px);
 }
 
@@ -175,7 +199,7 @@ h5 {
   box-shadow: 3px 3px 10px black;
 }
 
-.song-card:hover {
+/* .song-card:hover {
   transform: translateY(5px);
   box-shadow: 1px 1px 8px black;
 }
@@ -183,7 +207,7 @@ h5 {
 .audition-card:hover {
   transform: translateY(5px);
   box-shadow: 1px 1px 8px black;
-}
+} */
 
 .song-card {
   width: 20rem;
@@ -216,15 +240,23 @@ h5 {
   text-align: center;
 }
 
-.charts:hover {
+/* .charts:hover {
   transform: translateY(4px);
-}
+} */
 
 .chart-info {
   display: flex;
   flex-direction: column;
-  width: 30rem;
-  height: 30rem;
+  width: 25rem;
+  height: 25rem;
+  border: 1px black solid;
+  padding-bottom: 100px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  box-shadow: 3px 3px 10px black;
+  margin-top: 30px;
 }
 
 .home-page {
@@ -233,4 +265,40 @@ h5 {
   justify-content: space-between;
   margin: 10px;
   text-align: center;
+}
+
+.login-form, .signup-form, .audition-form{
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 40rem;
+  margin: auto;
+  justify-content: space-around;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-top: 50px;
+  background-color: white;
+  box-shadow: 3px 3px 10px black;
+}
+
+.audition-form {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.login-form {
+  width: 25rem;
+  height: 25rem;
+}
+
+
+
+.login-input {
+  border-radius: 25px;
+  background-color: white;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+  box-shadow: 3px 3px 10px black;
+  
 }
