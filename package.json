@@ -16,6 +16,7 @@
     "react-youtube": "^7.9.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
+    "rss-parser": "^3.7.2",
     "victory": "^32.3.6"
   },
   "scripts": {
