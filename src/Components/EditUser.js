@@ -17,16 +17,30 @@ class EditUser extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault()
-        this.props.updateUser(this.state)
+        if (this.state.profile_pic) {
+            this.props.updateUser(this.state)
+        } else {
+            alert("Must Submit An Image URL")
+        }
     }
 
     render(){
         return(
             <div>
-                <p>Change Your Profile Pic</p>
-                <form onSubmit={this.onSubmit}>
-                    <input type="text" name="profile_pic" value={this.state.profile_pic} placeholder="image url" onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
+                <h3>Change Your Profile Pic</h3>
+                <form onSubmit={this.onSubmit} className="update-user-form">
+                    <input 
+                        className="user-input"
+                        type="text" 
+                        name="profile_pic" 
+                        value={this.state.profile_pic} 
+                        placeholder="image url" 
+                        onChange={this.handleChange} />
+                    <input 
+                        className="update-user-button"
+                        type="submit" 
+                        value="Submit" 
+                    />
                 </form>
             </div>
         )

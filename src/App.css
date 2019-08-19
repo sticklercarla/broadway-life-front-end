@@ -1,48 +1,14 @@
-.App, h2{
+/* Containers */
+
+.App {
   text-align: center;
 }
 
-h2 {
-  margin-bottom: 0;
-}
-
-.body {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-size: 16px;
-}
-span {
-  font-size: 16px;
-}
-.Welcome-div {
-  display: flex;
-  justify-content: center;
-}
-
-.user-dsp-info {
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.update-user-info {
-  text-align: center
-}
-
-.image {
-  max-height: 75px;
-  max-width: 75px;
-  border: 1px solid black;
-  background-color: white;
-  border-radius: 25px;
-}
 
 header{
   /* background-color: #282c34; */
-  background-image: url("/images/a-chorus-line-jump-1.jpg");
-  background-repeat: no-repeat;
+  background-image: url("/images/broadway_wallpaper.jpg");
+  background-repeat: repeat;
   background-size: cover;
   background-position-y: -240px;
   display: flex;
@@ -51,17 +17,418 @@ header{
   color: black;
   
 }
+
+.body {
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Karla', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+  text-align: center;
+}
+
+.Welcome-div {
+  display: flex;
+  justify-content: center;
+  color: black;
+  /* text-shadow: 5px 5px 10px white; */
+  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  font-family: 'Cormorant', serif;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(232, 207, 252, 0.7);
+  width: 100%;
+  margin-top: -20px;
+  margin-left: -20px;
+  padding: 20px;
+  padding-right: 0;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 10px black;
+}
+
 .profile-nav {
   display: flex;
   justify-content: space-around;
 }
+
+.Song-Container, .Audition-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.song-card, .audition-card, .update-user-info {
+  color: black;
+  background-color: white;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  border-radius: 25px;
+  justify-content: space-between;
+  box-shadow: 3px 3px 10px black;
+}
+
+.song-card, .update-user-info {
+  width: 20rem;
+  height: 20rem;
+}
+
+.charts {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.update-user-info {
+  margin: auto;
+  margin-top: 30px;
+  width: 20rem;
+  height: 25rem;
+}
+
+.audition-card {
+  width: 20rem;
+  height: 25rem;
+}
+
+.card-info {
+  box-shadow: 3px 3px 10px white;
+  padding-bottom: 10px;
+  border-radius: 25px;
+}
+
+.user-dsp-info {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.update-user-info {
+  text-align: center;
+  border: 1px black solid;
+}
+
+
+.rss-div {
+  margin: 20px;
+  border: 1px black solid;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px black;
+  font-size: 18px;
+}
+
+.rss-container {
+  border: 1px black solid;
+  border-radius: 25px;
+  margin: 30px 400px;
+  padding: 20px;
+  box-shadow: 3px 3px 10px black;
+}
+
+/* Elements */
+
+label {
+  font-size: 16px;
+}
+span {
+  font-size: 16px;
+}
+
+h5 {
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.pie {
+  padding: 10px;
+  width: 30rem;
+  height: 30rem;
+  padding: 25px;
+  border: 1px black solid;
+  font-size: 10px;
+}
+
+.chart-info {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  height: 25rem;
+  border: 1px black solid;
+  padding-bottom: 100px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 25px;
+  margin: 25px;
+  box-shadow: 3px 3px 10px black;
+  /* margin-top: 30px;
+  margin-right: 20px; */
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: 'Cormorant', serif;
+  font-size: 65px;
+  padding-bottom: 0;
+  color: white;
+  /* text-shadow: 2px 2px 10px black; */
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.title-header {
+  display: inline-block;
+  font-size: 30px;
+  margin-left: -40px;
+  transform: rotate(-10deg);
+  text-shadow: 5px 5px 10px white;
+}
+.rss-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: 'Cormorant', serif;
+  font-size: 50px;
+  padding-bottom: 0;
+}
+
+.nav-components{
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-p {
+  margin-top: 0;
+  margin-bottom:0;
+}
+
+.nav-p, form{
+  text-align: center;
+  font-size: calc(20px + 2vmin);
+}
+
+.image {
+  max-height: 75px;
+  max-width: 75px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px white;
+}
+
+
+
+/** FORMS **/
 
 .audition-form {
   display: flex;
   flex-direction: column;
   width: 500px;
   margin: auto;
+}
 
+.login-form, .signup-form, .audition-form{
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 40rem;
+  margin: auto;
+  justify-content: space-around;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-top: 50px;
+  background-color: white;
+  box-shadow: 3px 3px 10px black;
+}
+
+.audition-form {
+  text-align: left;
+  padding-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+}
+
+.login-form {
+  width: 25rem;
+  height: 25rem;
+}
+
+.login-input, .user-input{
+  border-radius: 25px;
+  background-color: white;
+  width: 300px;
+  padding: 10px;
+  margin: auto;
+  box-shadow: 3px 3px 10px black;
+}
+
+.audition-input:hover {
+  background-color: lightgrey;
+}
+
+.audition-input {
+  padding: 2px;
+  padding-left: 5px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px dashed black;
+}
+
+
+
+/* BUTTONS/LINKS */
+
+.link, .nav-button, .login-button, .audition-button {
+  border: 1px black solid;
+  box-shadow: 3px 3px 10px black;
+  border-radius: 25px;
+  padding: 15px;
+  background-color: white;
+  cursor: grab;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.login-button {
+  width: 100px;
+  margin: auto;
+}
+
+.login-button:focus {
+  outline: none;
+}
+
+.login-button:active {
+  cursor: grabbing;
+  box-shadow: 1px 1px 5px black;
+  transform: translateY(4px);
+}
+
+.audition-button {
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.audition-button:focus {
+  outline: none;
+}
+
+.audition-button:active {
+  cursor: grabbing;
+  box-shadow: 1px 1px 5px black;
+  transform: translateY(4px);
+}
+
+.link:hover {
+  background-color: lightgray;
+  text-decoration: none;
+}
+
+.link:visited {
+  color: black;
+}
+
+.nav-button:hover {
+  background-color: lightgray;
+}
+
+.link:active {
+  cursor: grabbing;
+  box-shadow: 1px 1px 5px black;
+  transform: translateY(4px);
+  text-decoration: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.delete-user-button, .update-user-button {
+  border: 1px black solid;
+  box-shadow: 3px 3px 10px black;
+  border-radius: 25px;
+  padding: 10px;
+  background-color: white;
+  cursor: grab;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.update-user-button {
+  margin-top: 20px;
+}
+
+.update-user-button:focus {
+  outline: none;
+}
+
+.delete-user-button:hover {
+  background-color: rgb(243, 98, 98);
+  color: white;
+}
+
+.update-user-button:hover {
+  background-color: lightgrey
+}
+
+.update-user-button:active {
+  cursor: grabbing;
+  box-shadow: 1px 1px 5px black;
+  transform: translateY(4px);
+}
+
+.delete-user-button:active {
+  cursor: grabbing;
+  box-shadow: 1px 1px 5px black;
+  transform: translateY(4px);
+}
+
+.nav-button:visited {
+  border: none;
+}
+
+.nav-button:active {
+  cursor: grabbing;
+  box-shadow: 1px 1px 5px black;
+  transform: translateY(4px);
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: pink;
+}
+
+a:visited {
+  color: grey;
 }
 
 .card-flipper{
@@ -85,221 +452,32 @@ header{
   transform: translateY(4px);
 }
 
-h5 {
-  margin: 0;
-}
-
-.title {
-  margin-top: 0;
-  margin-bottom: .5em;
-  text-align: center;
-}
-
-.nav-p {
-  margin-top: 0;
-  margin-bottom:0;
-}
-
-.nav-p, form{
-  text-align: center;
-  font-size: calc(20px + 2vmin);
-}
-.nav {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(252, 252, 248, 0.7);
-  width: 100%;
-  margin-top: -20px;
-  margin-left: -20px;
-  padding: 20px;
-  padding-bottom: 20px;
-}
-
-.nav-components{
-  padding: 20px;
-  margin: 20px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.link, .nav-button, .login-button, .audition-button{
-  border: 1px black solid;
-  box-shadow: 3px 3px 10px black;
-  border-radius: 25px;
-  padding: 15px;
-  background-color: white;
-  cursor: grab;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.login-button {
-  width: 100px;
-  margin: auto;
-}
-
-.audition-button {
-  margin: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.link:hover {
-  background-color: lightgray;
-}
-
-.link:visited {
-  color: black;
-}
-
-.nav-button:hover {
-  background-color: lightgray;
-}
-
-.link:active {
-  cursor: grabbing;
-  box-shadow: 1px 1px 5px black;
-  transform: translateY(4px);
-}
-
-button:focus {
-    outline: none;
-}
 
 
-.nav-button:visited {
-  border: none;
-}
 
-.nav-button:active {
-  cursor: grabbing;
-  box-shadow: 1px 1px 5px black;
-  transform: translateY(4px);
-}
 
-.Song-Container, .Audition-Container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
-.song-card, .audition-card {
-  color: black;
-  background-color: white;
-  margin: 20px;
-  text-align: center;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  border: 1px black solid;
-  border-radius: 25px;
-  justify-content: space-between;
-  box-shadow: 3px 3px 10px black;
-}
 
-/* .song-card:hover {
-  transform: translateY(5px);
-  box-shadow: 1px 1px 8px black;
-}
 
-.audition-card:hover {
-  transform: translateY(5px);
-  box-shadow: 1px 1px 8px black;
-} */
 
-.song-card {
-  width: 20rem;
-  height: 20rem;
-}
 
-.audition-card {
-  width: 20rem;
-  height: 25rem;
-}
 
-.card-info {
-  box-shadow: 3px 3px 10px white;
-  padding-bottom: 10px;
-  border-radius: 25px;
-}
 
-.pie {
-  padding: 10px;
-  width: 30rem;
-  height: 30rem;
-  padding: 25px;
-  border: 1px black solid;
-  font-size: 10px;
-}
 
-.charts {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-}
+
+
+
 
 /* .charts:hover {
   transform: translateY(4px);
 } */
 
-.chart-info {
-  display: flex;
-  flex-direction: column;
-  width: 25rem;
-  height: 25rem;
-  border: 1px black solid;
-  padding-bottom: 100px;
-  padding-right: 20px;
-  padding-left: 20px;
-  border-radius: 25px;
-  margin: 25px;
-  box-shadow: 3px 3px 10px black;
-  /* margin-top: 30px;
-  margin-right: 20px; */
-}
-
-.home-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 10px;
-  text-align: center;
-}
-
-.login-form, .signup-form, .audition-form {
-  display: flex;
-  flex-direction: column;
-  width: 40rem;
-  height: 40rem;
-  margin: auto;
-  justify-content: space-around;
-  border: 1px solid black;
-  border-radius: 25px;
-  margin-top: 50px;
-  background-color: white;
-  box-shadow: 3px 3px 10px black;
-}
-
-.audition-form {
-  margin-top: 30px;
-  margin-bottom: 25px;
-}
-
-.login-form {
-  width: 25rem;
-  height: 25rem;
-}
 
 
 
-.login-input {
-  border-radius: 25px;
-  background-color: white;
-  width: 300px;
-  padding: 10px;
-  margin: auto;
-  box-shadow: 3px 3px 10px black;
-  
-}
+
+
+
+
+
+

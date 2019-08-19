@@ -10,7 +10,6 @@ const addNewSong = (song) => ({
 })
 
 const createNewSongToDB = song => dispatch => {
-    console.log(song)
     fetch('http://localhost:3000/songs', {
         method: "POST",
         headers: {

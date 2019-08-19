@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import UserShowPage from '../Containers/UserShowPage'
 import ViewEditAudition from '../Containers/ViewEditAudition'
-import AuditionStats from '../Containers/AuditionStats'
+import RSSFeed from '../Containers/RSSFeed'
 import SongBook from '../Containers/SongBook'
 import AuditionForm from '../Containers/AuditionForm'
 import Login from './Login'
@@ -29,7 +29,7 @@ class Profile extends React.Component {
       case 'view_edit_audition':
         return <ViewEditAudition />
       case 'audition_stats':
-        return <AuditionStats />
+        return <RSSFeed />
       case 'song_book':
         return <SongBook />
       case 'edit_user':

@@ -19,8 +19,10 @@ class SongForm extends React.Component {
         if (e.target.name === "video_key"){
             const link =  e.target.value
             const key = link.split("=")[1]
+            const keyID = key ? key : link.split(".be/")[1]
+            console.log(keyID)
             this.setState({
-                [e.target.name]: key
+                [e.target.name]: keyID
             })
         } else {
             this.setState({

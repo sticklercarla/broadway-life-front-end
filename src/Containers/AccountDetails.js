@@ -18,7 +18,7 @@ class AccountDetails extends React.Component {
                 <EditUser />
                 <br></br>
                 <p>Delete Account and All Corresponding Data?</p>
-                <button onClick={this.handleClick} >Yes, I want to delete my account forever!</button>
+                <button onClick={this.handleClick} className="delete-user-button">Yes, I want to delete my account forever!</button>
             </div>
         )
     }
