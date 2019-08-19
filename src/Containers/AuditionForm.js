@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import auditionActions from '../Actions/auditionActions'
 import pageActions from '../Actions/pageActions'
 
+
 class AuditionForm extends React.Component {
 
     state = {
@@ -77,12 +78,12 @@ class AuditionForm extends React.Component {
         
         return(
             <div>
+                <h2>Log A New Audition</h2>
                 {this.songs().length ? 
 
                 <form className="audition-form"  onSubmit={this.handleSubmit}>
-                    <label>Title of Show:  
+                    <label className="audition-input">Title of Show:  
                         <input 
-                            className="audition-input"
                             type="text" 
                             name="musical_title" 
                             value={this.state.musical_title} 
@@ -90,8 +91,8 @@ class AuditionForm extends React.Component {
                             placeholder="title of show"
                         />
                     </label>
-                    <label>Style of Show:  
-                        <select className="audition-input" name="style" value={this.state.style} onChange={this.onChange}>
+                    <label className="audition-input">Style of Show:  
+                        <select  name="style" value={this.state.style} onChange={this.onChange}>
                             <option name="style" value="Contemporary">Contemporary</option>
                             <option name="style" value="Disney">Disney</option>
                             <option name="style" value="Doo Wop">Doo Wop</option>
@@ -105,18 +106,18 @@ class AuditionForm extends React.Component {
                             <option name="style" value="Sondheim">Sondheim</option>
                         </select>
                     </label>
-                    <label>Time of Audition:  
+                    <label className="audition-input">Time of Audition:  
                         <input 
-                            className="audition-input"
+                            
                             type="time" 
                             name="time" 
                             value={this.state.time} 
                             onChange={this.onChange} 
                         />
                     </label>
-                    <label>Date of Audition:  
+                    <label className="audition-input">Date of Audition:  
                         <input 
-                            className="audition-input"
+                            
                             type="date" 
                             name="date" 
                             value={this.state.date} 
@@ -124,15 +125,15 @@ class AuditionForm extends React.Component {
                         />
                     </label>
                     <span>(If the song you sang is NOT in your song book, you should add the song to your song book)</span>
-                    <label>Song Performed from Song Book: 
-                        <select className="audition-input" name="song_id" value={this.state.song_id} onChange={this.onChange}>
+                    <label className="audition-input" >Song Performed from Song Book: 
+                        <select name="song_id" value={this.state.song_id} onChange={this.onChange}>
                             {/* <option name="song_id" value={this.state.song_id}>Other</option> */}
                             { this.songs() }
                         </select>
                     </label>
                     
-                    <label>If you sang from your book, what was the cut length you performed? 
-                        <select className="audition-input" name="song_length" value={this.state.song_length} onChange={this.onChange}>
+                    <label className="audition-input">If you sang from your book, what was the cut length you performed? 
+                        <select  name="song_length" value={this.state.song_length} onChange={this.onChange}>
                             <option name="song_length" value="none">none</option>
                             <option name="song_length" value="8 Bars">8 Bars</option>
                             <option name="song_length" value="16 Bars">16 Bars</option>
@@ -140,69 +141,74 @@ class AuditionForm extends React.Component {
                             <option name="song_length" value="Full Song">Full Song</option>
                         </select>
                     </label>
-                    <label>Casting Office:  
-                        <select className="audition-input" name="casting_office_id" value={this.state.casting_office_id} onChange={this.onChange}>
+                    <label className="audition-input">Casting Office:  
+                        <select  name="casting_office_id" value={this.state.casting_office_id} onChange={this.onChange}>
                             {this.casting_offices()}
                         </select>
                     </label>
-                    <label>Audition Location: 
-                        <select className="audition-input" name="audition_location_id" value={this.state.audition_location_id} onChange={this.onChange}>
+                    <label className="audition-input" >Audition Location: 
+                        <select name="audition_location_id" value={this.state.audition_location_id} onChange={this.onChange}>
                             {this.audition_locations()}
                         </select>
                     </label>
-                    <label>Was this an Appointment?
+                    <label className="checkbox">
                         <input 
-                            className="checkbox"
+                            
                             type="checkbox" 
                             name="appointment" 
                             value={this.state.appointment} 
                             defaultChecked={this.state.appointment} 
                             onChange={this.handleCheck} 
                         />
+                        Was this an Appointment?
                     </label>
-                    <label>Were you given sides? 
+                    <label className="checkbox">
                         <input 
-                            className="checkbox"
+                            
                             type="checkbox" 
                             name="sides" 
                             value={this.state.sides} 
                             defaultChecked={this.state.sides} 
                             onChange={this.handleCheck} 
                         />
+                        Were you given sides? 
                     </label>
-                    <label>Did you perform those sides? 
+                    <label className="checkbox"> 
                         <input 
-                            className="checkbox"
+                            
                             type="checkbox" 
                             name="sides_performed" 
                             value={this.state.sides_performed} 
                             defaultChecked={this.state.sides_performed} 
                             onChange={this.handleCheck} 
                         />
+                        Did you perform those sides?
                     </label>
-                    <label>Did you get a callback? 
+                    <label  className="checkbox"  >
                         <input 
-                            className="checkbox"  
+                           
                             type="checkbox" 
                             name="callback" 
                             value={this.state.callback} 
                             defaultChecked={this.state.callback} 
                             onChange={this.handleCheck} 
                         />
+                        Did you get a callback? 
                     </label>
-                    <label>Did you book it? 
+                    <label  className="checkbox">
                         <input 
-                            className="checkbox"
+                           
                             type="checkbox" 
                             name="booked" 
                             value={this.state.booked} 
                             defaultChecked={this.state.booked} 
                             onChange={this.handleCheck} 
                         />
+                        Did you book it? 
                     </label>
-                    <label>Notes: 
+                    <label className="audition-input">Notes: 
                         <input 
-                            className="audition-input"
+                            
                             type="text-area" 
                             name="notes" 
                             value={this.state.notes} 
@@ -210,7 +216,7 @@ class AuditionForm extends React.Component {
                         />
                     </label>
                     <input 
-                        className="audition-button"
+                        id="audition-button"
                         type="submit" 
                         value="Submit" 
                     />
