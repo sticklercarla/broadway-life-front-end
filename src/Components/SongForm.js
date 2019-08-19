@@ -10,21 +10,30 @@ class SongForm extends React.Component {
         composer: "",
         lyricist: "",
         performed_by: "",
+        video_key: "",
         style: "Contemporary",
         user_id: this.props.user.id
     }
     
     onChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+        if (e.target.name === "video_key"){
+            const link =  e.target.value
+            const key = link.split("=")[1]
+            this.setState({
+                [e.target.name]: key
+            })
+        } else {
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+        }
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createNewSongToDB(this.state)
     }
-    
+
     render() {
         return (
             <form onSubmit={this.handleSubmit} className="song-form"> 
@@ -32,6 +41,7 @@ class SongForm extends React.Component {
                 <input type="text" name="composer" value={this.state.composer} onChange={this.onChange} placeholder="composer"/>
                 <input type="text" name="lyricist" value={this.state.lyricist} onChange={this.onChange} placeholder="lyricist"/>
                 <input type="text" name="performed_by" value={this.state.performed_by} onChange={this.onChange} placeholder="performed by"/>
+                <input type="text" name="video_key" value={this.state.video_key} onChange={this.onChange} placeholder="Youtube Link" />
                 <select name="style" value={this.state.style} onChange={this.onChange}>
                     <option name="style" value="Contemporary">Contemporary</option>
                     <option name="style" value="Disney">Disney</option>
