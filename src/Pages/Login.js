@@ -2,6 +2,23 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import userActions from "../Actions/userActions";
 import pageActions from "../Actions/pageActions";
+import { slideInUp, slideInLeft, slideInRight } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+
+const styles = {
+  slideInUp: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(slideInUp, 'slideInUp')
+  },
+  slideInLeft: {
+    animation: 'x 1.3s',
+    animationName: Radium.keyframes(slideInLeft, 'slideInLeft')
+  },
+  slideInRight: {
+    animation: 'x 1.6s',
+    animationName: Radium.keyframes(slideInRight, 'slideInRight')
+  }
+}
 
 class Login extends Component {
   state = {
@@ -25,6 +42,7 @@ class Login extends Component {
   render() {
     return (
       <React.Fragment>
+        <StyleRoot style={styles.slideInLeft}>
         <form onSubmit={this.handleSubmit} className="login-form">
           <h2>Login</h2>
           <input
@@ -48,6 +66,7 @@ class Login extends Component {
             type="submit" 
           />
         </form>
+        </StyleRoot>
       </React.Fragment>
     );
   }

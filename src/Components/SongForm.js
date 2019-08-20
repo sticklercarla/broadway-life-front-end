@@ -3,7 +3,15 @@ import React from 'react';
 import { connect } from "react-redux";
 import songBookActions from "../Actions/songBookActions";
 import pageActions from "../Actions/pageActions"
-import { thisTypeAnnotation } from '@babel/types';
+import { fadeIn } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+
+const styles = {
+    fadeIn: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(fadeIn, 'fadeIn')
+    }
+}
 
 class SongForm extends React.Component {
 
@@ -63,6 +71,7 @@ class SongForm extends React.Component {
 
     render() {
         return (
+            <StyleRoot style={styles.fadeIn}>
             <form onSubmit={this.handleSubmit} className="song-form"> 
                 <input type="text" name="title" value={this.state.title} onChange={this.onChange} placeholder="title"/>
                 <input type="text" name="composer" value={this.state.composer} onChange={this.onChange} placeholder="composer"/>
@@ -87,6 +96,7 @@ class SongForm extends React.Component {
                     type="submit" 
                     value="Submit" />
             </form>
+            </StyleRoot>
         )
     }
 }

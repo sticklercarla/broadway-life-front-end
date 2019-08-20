@@ -1,7 +1,15 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import EditSong from './EditSong'
+import { fadeIn } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
+const styles = {
+    fadeIn: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(fadeIn, 'fadeIn')
+    }
+}
 
 class Song extends React.Component {
 
@@ -10,6 +18,7 @@ class Song extends React.Component {
         cardEdit: false
     }
     
+   
     handleFlipClick = () => {
         this.setState({ cardFlipped: !this.state.cardFlipped })
     }
@@ -35,7 +44,7 @@ class Song extends React.Component {
             }
         }
         return (
-            
+            <StyleRoot style={styles.fadeIn}>
             <div className="song-card" >
                 {this.state.cardFlipped ? 
                 (<div>
@@ -68,6 +77,7 @@ class Song extends React.Component {
                     <div className="card-flipper" name="cardFlipped" onClick={this.handleFlipClick}>{this.state.cardFlipped ? "FLIP BACK" : "FLIP TO PLAY"}</div>
                 </div>
             </div>
+            </StyleRoot>
         )
     }
 }

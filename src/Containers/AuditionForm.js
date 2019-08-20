@@ -2,7 +2,15 @@ import React from "react";
 import { connect } from "react-redux"
 import auditionActions from '../Actions/auditionActions'
 import pageActions from '../Actions/pageActions'
+import { fadeIn } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
+const styles = {
+    fadeIn: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(fadeIn, 'fadeIn')
+    }
+}
 
 
 class AuditionForm extends React.Component {
@@ -82,6 +90,7 @@ class AuditionForm extends React.Component {
     render(){
         
         return(
+            <StyleRoot style={styles.fadeIn}>
             <div>
                 {this.songs().length ? 
                 <div>
@@ -236,6 +245,7 @@ class AuditionForm extends React.Component {
                 
 
             </div>
+            </StyleRoot>
         )
     }
 }

@@ -3,6 +3,15 @@ import UpdateAudition from './UpdateAudition'
 import Moment from 'react-moment';
 import 'moment-timezone';
 import { connect } from "react-redux"
+import { fadeIn } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+
+const styles = {
+    fadeIn: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(fadeIn, 'fadeIn')
+    }
+}
 
 class Audition extends React.Component {
 
@@ -53,6 +62,7 @@ class Audition extends React.Component {
 
     render() {
         return (
+            <StyleRoot style={styles.fadeIn}>
             <div className="audition-card" >
                 {this.state.cardFlipped ?
                 (<div>
@@ -78,6 +88,7 @@ class Audition extends React.Component {
                 }
                 <div className="card-flipper" onClick={this.handleClick}>{this.state.cardFlipped ? "VIEW CARD" : "UPDATE ME"}</div>
             </div>
+            </StyleRoot>
         )
     }
 }

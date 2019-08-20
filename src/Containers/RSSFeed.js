@@ -1,4 +1,13 @@
 import React from "react";
+import { fadeIn } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+
+const styles = {
+    fadeIn: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(fadeIn, 'fadeIn')
+    }
+}
 
 let Parser = require('rss-parser');
 let parser = new Parser();
@@ -31,12 +40,14 @@ class RSSFeed extends React.Component {
     render(){
         // console.log("my func", this.myFunc());
         return(
+            <StyleRoot style={styles.fadeIn}>
             <div className="rss-container">
                 <h1 className="rss-title">BACKSTAGE.COM AUDITION FEED</h1>
                 <div>
                     {this.state.auditions.length ? this.state.auditions : "LOADING..."}
                 </div>
             </div>
+            </StyleRoot>
         )
     }
 }

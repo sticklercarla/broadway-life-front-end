@@ -2,6 +2,24 @@ import React from "react";
 import { connect } from "react-redux"
 import { VictoryPie } from 'victory';
 import pageActions from '../Actions/pageActions'
+import { slideInUp, slideInLeft, slideInRight } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+ 
+const styles = {
+  slideInUp: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(slideInUp, 'slideInUp')
+  },
+  slideInLeft: {
+    animation: 'x 1.3s',
+    animationName: Radium.keyframes(slideInLeft, 'slideInLeft')
+  },
+  slideInRight: {
+    animation: 'x 1.6s',
+    animationName: Radium.keyframes(slideInRight, 'slideInRight')
+  }
+}
+
 
 class UserShowPage extends React.Component {
 
@@ -50,17 +68,20 @@ class UserShowPage extends React.Component {
         console.log(songData.length)
         return(
             <div className="home-page">
-                <div className="chart-info">
+                <StyleRoot>
+                <div className="chart-info" style={styles.slideInLeft}>
                     <h1>{songData.length} {songData.length === 1 ? "style" : "styles"} in your Song Book</h1>
                     
                     <div className="charts">
                         {this.props.songs.length ? 
+                    
                         <VictoryPie 
                             labelRadius={90} 
                             padding={5}  
                             colorScale={["pink", "orange", "cyan", "green", "tomato", "grey"]} 
                             data={songData} 
                         />
+                     
                         :
                         <div>
                             <h3>You have no songs in your song book, you should add some!</h3>
@@ -70,7 +91,9 @@ class UserShowPage extends React.Component {
                         
                     </div>
                 </div>
-                <div className="chart-info">
+                </StyleRoot>
+                <StyleRoot>
+                <div className="chart-info" style={styles.slideInUp}>
                
                     <h1>You've had {this.callBacks().length} {this.callBacks().length === 1 ? "callback" : "callbacks"} </h1>
                     <div className="charts">
@@ -101,7 +124,9 @@ class UserShowPage extends React.Component {
                     }
                     </div>
                 </div>
-                <div className="chart-info">
+                </StyleRoot>
+                <StyleRoot>
+                <div className="chart-info" style={styles.slideInRight}>
                     <h1>You've booked {this.bookings().length} {this.bookings().length === 1 ? "audition" : "auditions"}</h1>
                     <div className="charts">
                         {this.bookings().length ? (
@@ -130,7 +155,7 @@ class UserShowPage extends React.Component {
                     }
                     </div>
                 </div>
-
+                </StyleRoot>
             </div>
         )
     }
