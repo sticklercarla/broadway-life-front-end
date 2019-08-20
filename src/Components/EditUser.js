@@ -1,5 +1,6 @@
 import React from "react";
 import userActions from "../Actions/userActions";
+import pageActions from "../Actions/pageActions"
 import { connect } from "react-redux"
 
 class EditUser extends React.Component {
@@ -19,6 +20,7 @@ class EditUser extends React.Component {
         e.preventDefault()
         if (this.state.profile_pic) {
             this.props.updateUser(this.state)
+            this.props.updatePage("profile")
         } else {
             alert("Must Submit An Image URL")
         }
@@ -50,7 +52,8 @@ class EditUser extends React.Component {
 const mapStateToProps = state => ({ user: state.userReducer });
 
 const mapDispatchToProps = {
-  updateUser: userActions.updateUserToDB
+  updateUser: userActions.updateUserToDB,
+  updatePage: pageActions.updatePage
 };
 
 export default connect(

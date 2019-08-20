@@ -85,7 +85,7 @@ header{
   height: 20rem;
 }
 
-.charts {
+.charts, .song-button-div {
   display: flex;
   justify-content: space-around;
   text-align: center;
@@ -129,12 +129,19 @@ header{
   font-size: 18px;
 }
 
-.rss-container {
+.rss-container, .default-border, .song-form {
   border: 1px black solid;
   border-radius: 25px;
   margin: 30px 400px;
   padding: 20px;
   box-shadow: 3px 3px 10px black;
+}
+
+.default-border {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
 
 /* Elements */
@@ -268,6 +275,22 @@ h2 {
   margin-right: 20px;
   box-shadow: 1px 1px 10px grey;
 }
+
+.song-form {
+  padding-top: 5px;
+}
+
+.song-form input {
+  border: none;
+  font-size: 16px;
+  margin: 2px;
+  border-radius: 5px;
+  background-color: rgb(250, 246, 246);
+}
+
+.song-form input:hover {
+  background-color: lightgrey;
+}
  
 select {
   border: none;
@@ -323,7 +346,7 @@ select {
 
 /* BUTTONS/LINKS */
 
-.link, .nav-button, .login-button, #audition-button {
+.link, .nav-button, .login-button, #audition-button{
   border: 1px black solid;
   box-shadow: 3px 3px 10px black;
   border-radius: 25px;
@@ -349,10 +372,24 @@ select {
   transform: translateY(4px);
 }
 
-#audition-button {
+#audition-button, .add-song-button {
   margin: auto;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.add-song-button {
+  margin-top: 20px;
+}
+
+.add-song-button:hover {
+  background-color: lightgray;
+}
+
+.add-song-button:active {
+  cursor: grabbing;
+  box-shadow: 1px 1px 5px black;
+  transform: translateY(4px);
 }
 
 .audition-button:focus {
@@ -389,7 +426,7 @@ button:focus {
     outline: none;
 }
 
-.delete-user-button, .update-user-button {
+.update-user-button, .add-song-button  {
   border: 1px black solid;
   box-shadow: 3px 3px 10px black;
   border-radius: 25px;

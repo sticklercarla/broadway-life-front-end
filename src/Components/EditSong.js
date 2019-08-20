@@ -1,18 +1,18 @@
 import React from 'react';
-
 import { connect } from "react-redux";
 import songBookActions from "../Actions/songBookActions";
 
-class SongForm extends React.Component {
+class EditSong extends React.Component {
 
     state = {
-        title: "",
-        composer: "",
-        lyricist: "",
-        performed_by: "",
-        video_key: "",
-        style: "Contemporary",
-        user_id: this.props.user.id
+        title: this.props.song.title,
+        composer: this.props.song.composer,
+        lyricist: this.props.song.lyricist,
+        performed_by: this.props.song.performed_by,
+        video_key: this.props.song.video_key,
+        style: this.props.song.style,
+        user_id: this.props.song.user_id,
+        song_id: this.props.song.id
     }
     
     onChange = (e) => {
@@ -36,13 +36,14 @@ class SongForm extends React.Component {
         if (!this.state.title) {
             alert("Songs must have a title")
         } else {
-            this.props.createNewSongToDB(this.state)
+            this.props.updateSongToDB(this.state)
+            this.props.handleEditClick()
         }
     }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="song-form"> 
+            <form onSubmit={this.handleSubmit}> 
                 <input type="text" name="title" value={this.state.title} onChange={this.onChange} placeholder="title"/>
                 <input type="text" name="composer" value={this.state.composer} onChange={this.onChange} placeholder="composer"/>
                 <input type="text" name="lyricist" value={this.state.lyricist} onChange={this.onChange} placeholder="lyricist"/>
@@ -73,11 +74,11 @@ class SongForm extends React.Component {
 const mapStateToProps = state => ({ user: state.userReducer })
 
 const mapDispatchToProps = {
-    createNewSongToDB: songBookActions.createNewSongToDB,
+    updateSongToDB: songBookActions.updateSongToDB,
 };
 
 
 export default connect (
     mapStateToProps,
     mapDispatchToProps
-)(SongForm);
+)(EditSong);

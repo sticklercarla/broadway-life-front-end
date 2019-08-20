@@ -56,6 +56,10 @@ class AuditionForm extends React.Component {
         })
     }
 
+    handleClick = () => {
+        this.props.updatePage("song_book")
+    }
+
     songs = () => {
         return this.props.songs.map(song => {
             return <option name="song_id" value={song.id}>{song.title}</option>
@@ -78,9 +82,10 @@ class AuditionForm extends React.Component {
         
         return(
             <div>
-                <h2>Log A New Audition</h2>
+                
                 {this.songs().length ? 
-
+                <div>
+                <h2>Log A New Audition</h2>
                 <form className="audition-form"  onSubmit={this.handleSubmit}>
                     <label className="audition-input">Title of Show:  
                         <input 
@@ -124,13 +129,12 @@ class AuditionForm extends React.Component {
                             onChange={this.onChange} 
                         />
                     </label>
-                    <span>(If the song you sang is NOT in your song book, you should add the song to your song book)</span>
                     <label className="audition-input" >Song Performed from Song Book: 
                         <select name="song_id" value={this.state.song_id} onChange={this.onChange}>
-                            {/* <option name="song_id" value={this.state.song_id}>Other</option> */}
                             { this.songs() }
                         </select>
                     </label>
+                    <span>Don't See Your Song? Add It To Your Song Book</span>
                     
                     <label className="audition-input">If you sang from your book, what was the cut length you performed? 
                         <select  name="song_length" value={this.state.song_length} onChange={this.onChange}>
@@ -221,9 +225,13 @@ class AuditionForm extends React.Component {
                         value="Submit" 
                     />
                 </form>
+                </div>
                 :
-                <h1 className="rss-title">You Cannot Create An Audition Until You Add Songs Into Your Book</h1>
-                
+                <div className="default-border">
+                    <h1 className="rss-title">You Cannot Create An Audition Until You Add Songs Into Your Song Book</h1>
+                    <h2>Once a song has been added to your book it will show up as an option to add when you log a new audition</h2>
+                    <button className="add-song-button" onClick={this.handleClick}>Add Song</button>
+                </div>
                 }
                 
 

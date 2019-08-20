@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux"
-import { VictoryPie, VictoryAnimation, VictoryLabel} from 'victory';
+import { VictoryPie } from 'victory';
+import pageActions from '../Actions/pageActions'
 
 class UserShowPage extends React.Component {
 
@@ -36,6 +37,10 @@ class UserShowPage extends React.Component {
         return newObjArray
     }
 
+    handleClick = () => {
+        this.props.updatePage("song_book")
+    }
+
     render(){
         const booked = this.bookings().length
         const notBooked = this.props.auditions.length - booked
@@ -57,7 +62,10 @@ class UserShowPage extends React.Component {
                             data={songData} 
                         />
                         :
-                        <h3>You have no songs in your song book, you should add some!</h3>
+                        <div>
+                            <h3>You have no songs in your song book, you should add some!</h3>
+                            <button className="add-song-button" onClick={this.handleClick}>Add Songs</button>
+                        </div>
                     }
                         
                     </div>
@@ -133,4 +141,8 @@ const mapStateToProps = state => ({
     songs: state.songBookReducer.song_book
 })
 
-export default connect(mapStateToProps, null)(UserShowPage)
+const mapDispatchToProps = {
+    updatePage: pageActions.updatePage,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserShowPage)

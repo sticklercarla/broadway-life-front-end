@@ -57,7 +57,7 @@ class SongBook extends React.Component {
                             <option name="filterTerm" value="Sondheim">Sondheim</option>
                         </select>
                     </form>
-                </div>
+                </div >
                 <div className="Song-Container">
                     {this.songs()}
                 </div>

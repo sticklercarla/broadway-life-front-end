@@ -30,7 +30,7 @@ const Nav = props => {
         </div>
         <div className="profile-nav">
             {localStorage.token ? (<button className="nav-button" name="log_audition" onClick={handlePage}>Log New Audition</button> ) : null }
-            {localStorage.token ? (<button className="nav-button" name="view_edit_audition" onClick={handlePage}>View/Edit Auditions</button> ) : null }
+            {localStorage.token ? (<button className="nav-button" name="view_edit_audition" onClick={handlePage}>View Auditions</button> ) : null }
             {localStorage.token ? (<button className="nav-button" name="song_book" onClick={handlePage}>Audition Song Book</button> ) : null }
             {localStorage.token ? (<button className="nav-button" name="audition_stats" onClick={handlePage}>Backstage.com</button> ) : null }
             {localStorage.token ? (<button className="nav-button" name="edit_user" onClick={handlePage}>Account Details</button> ) : null }
