@@ -4,6 +4,7 @@ import auditionActions from '../Actions/auditionActions'
 import pageActions from '../Actions/pageActions'
 
 
+
 class AuditionForm extends React.Component {
 
     state = {
@@ -82,10 +83,11 @@ class AuditionForm extends React.Component {
         
         return(
             <div>
-                
                 {this.songs().length ? 
                 <div>
                 <h2>Log A New Audition</h2>
+                <h4>If You Need To Add A Song To Your Book, Please Do So Before Logging An Audition</h4>
+             
                 <form className="audition-form"  onSubmit={this.handleSubmit}>
                     <label className="audition-input">Title of Show:  
                         <input 
@@ -134,8 +136,6 @@ class AuditionForm extends React.Component {
                             { this.songs() }
                         </select>
                     </label>
-                    <span>Don't See Your Song? Add It To Your Song Book</span>
-                    
                     <label className="audition-input">If you sang from your book, what was the cut length you performed? 
                         <select  name="song_length" value={this.state.song_length} onChange={this.onChange}>
                             <option name="song_length" value="none">none</option>

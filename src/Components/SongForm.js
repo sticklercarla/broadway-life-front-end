@@ -2,6 +2,8 @@ import React from 'react';
 
 import { connect } from "react-redux";
 import songBookActions from "../Actions/songBookActions";
+import pageActions from "../Actions/pageActions"
+import { thisTypeAnnotation } from '@babel/types';
 
 class SongForm extends React.Component {
 
@@ -15,6 +17,24 @@ class SongForm extends React.Component {
         user_id: this.props.user.id
     }
     
+  
+    initialState = () => {
+        const initialState = {
+            title: "",
+            composer: "",
+            lyricist: "",
+            performed_by: "",
+            video_key: "",
+            style: "Contemporary",
+            user_id: this.props.user.id
+        }
+        return initialState
+    }
+
+    resetState = () => {
+        this.setState(this.initialState())
+    }
+
     onChange = (e) => {
         if (e.target.name === "video_key"){
             const link =  e.target.value
@@ -37,6 +57,7 @@ class SongForm extends React.Component {
             alert("Songs must have a title")
         } else {
             this.props.createNewSongToDB(this.state)
+            this.resetState()
         }
     }
 
@@ -62,7 +83,7 @@ class SongForm extends React.Component {
                     <option name="style" value="Sondheim">Sondheim</option>
                 </select>
                 <input  
-                    className="add-song-button"
+                    id="add-song-btn"
                     type="submit" 
                     value="Submit" />
             </form>
@@ -74,6 +95,7 @@ const mapStateToProps = state => ({ user: state.userReducer })
 
 const mapDispatchToProps = {
     createNewSongToDB: songBookActions.createNewSongToDB,
+    updatePage: pageActions.updatePage
 };
 
 

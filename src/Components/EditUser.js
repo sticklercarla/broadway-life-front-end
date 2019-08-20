@@ -39,7 +39,7 @@ class EditUser extends React.Component {
                         placeholder="image url" 
                         onChange={this.handleChange} />
                     <input 
-                        className="update-user-button"
+                        id="update-user-button"
                         type="submit" 
                         value="Submit" 
                     />

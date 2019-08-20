@@ -79,7 +79,7 @@ class UserShowPage extends React.Component {
                             <VictoryPie 
                                 labelRadius={90} 
                                 padding={5}  
-                                colorScale={["green", "orange"]} 
+                                colorScale={["lightgreen", "orange"]} 
                                 data={[ 
                                 {x: "Called Back", y: calledBack}
                               
@@ -89,7 +89,7 @@ class UserShowPage extends React.Component {
                             <VictoryPie 
                                 labelRadius={90} 
                                 padding={5}  
-                                colorScale={["green", "orange"]} 
+                                colorScale={["lightblue", "tomato"]} 
                                 data={[ 
                                 {x: "Called Back", y: calledBack},
                                 {x: "Other Auditions", y: notCalledBack}

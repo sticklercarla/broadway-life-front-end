@@ -19,8 +19,8 @@ class Signup extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        if (this.state.password !== this.state.password_confirmation) {
-            alert("Passwords don't match")
+        if (!this.state.username || this.state.password !== this.state.password_confirmation) {
+            alert("Username does not exist/Passwords don't match")
             this.props.history.push("/signup")
         } else {
             const { createNewUserToDB } = this.props;
