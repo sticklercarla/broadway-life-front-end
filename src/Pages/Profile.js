@@ -18,7 +18,6 @@ class Profile extends React.Component {
   }
 
   render () {
-    console.log(this.props.page)
     switch(this.props.page) {
       case "login":
         return <Login />

@@ -12,6 +12,8 @@ export default (state = defaultState, action) => {
         case "DELETE_AUDITION":
             const state_post_delete = state.all_auditions.filter(audition => (audition.id !== action.deleted_audition_id))
             return {all_auditions: [...state_post_delete]}
+        case "CLEAR_AUDITIONS":
+                return defaultState;
         default:
             return state;
     }

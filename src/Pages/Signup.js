@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import userActions from "../Actions/userActions";
+import pageActions from "../Actions/pageActions"
 import { slideInUp, slideInLeft, slideInRight } from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
@@ -10,11 +11,11 @@ const styles = {
     animationName: Radium.keyframes(slideInUp, 'slideInUp')
   },
   slideInLeft: {
-    animation: 'x 1.3s',
+    animation: 'x 1s',
     animationName: Radium.keyframes(slideInLeft, 'slideInLeft')
   },
   slideInRight: {
-    animation: 'x 1.6s',
+    animation: 'x 1s',
     animationName: Radium.keyframes(slideInRight, 'slideInRight')
   }
 }
@@ -42,19 +43,26 @@ class Signup extends React.Component {
             this.props.history.push("/signup")
         } else {
             const { createNewUserToDB } = this.props;
-            createNewUserToDB(this.state)
-            alert("Thanks for creating an account. Please log in!")
-            this.props.history.push("/login")
+            createNewUserToDB(this.state).then(()=> {
+                console.log(localStorage.token)
+                if (localStorage.token) {
+                    this.props.history.push("/profile")
+                    this.props.updatePage("profile")
+                } 
+            })
         }
     }
 
     render() {
         return (
+            <div>
+                
             <React.Fragment>
                 <StyleRoot style={styles.slideInRight}>
                 <form onSubmit={this.handleSubmit} className="signup-form">
                     <h2>Create New Account</h2>
                     <input
+                        required
                         className="login-input"
                         type="text"
                         onChange={this.handleChange}
@@ -63,6 +71,7 @@ class Signup extends React.Component {
                         placeholder="first name"
                     />
                     <input
+                        required
                         className="login-input"
                         type="text"
                         onChange={this.handleChange}
@@ -71,6 +80,7 @@ class Signup extends React.Component {
                         placeholder="username"
                     />
                     <input
+                        required
                         className="login-input"
                         type="password"
                         onChange={this.handleChange}
@@ -79,6 +89,7 @@ class Signup extends React.Component {
                         placeholder="password"
                     />
                     <input 
+                        required
                         className="login-input"
                         type="password"
                         onChange={this.handleChange}
@@ -93,12 +104,14 @@ class Signup extends React.Component {
                 </form>
                 </StyleRoot>
             </React.Fragment>
+            </div>
         )
     }
 }
 
 const mapDispatchToProps = {
-    createNewUserToDB: userActions.createNewUserToDB
+    createNewUserToDB: userActions.createNewUserToDB,
+    updatePage: pageActions.updatePage
 };
 
 const mapStateToProps = state => ({ user: state });

@@ -7,7 +7,8 @@ const Routes = () => {
         <Switch>
             <Route path="/login" component={Pages.Login} />
             <Route path="/signup" component={Pages.Signup} />
-            <Route path="/" component={Pages.Profile} />
+            {localStorage.token ? <Route exact path="/profile" component={Pages.Profile} /> : <Route component={Pages.Login} /> }
+            <Route component={Pages.Login} />
         </Switch>
     )
 };

@@ -49,7 +49,7 @@ class UserShowPage extends React.Component {
     }
 
     songDataObjects = () => {
-        const stylesArray = ["Contemporary", "Disney", "Doo Wop", "Golden Age", "Jazz Standard", "Jukebox", "Musical Theatre Pop/Rock", "Operetta", "Pop", "Rock", "Sondheim"]
+        const stylesArray = ["Contemporary", "Classical MT", "Disney", "Doo Wop", "Golden Age", "Jazz Standard", "Jukebox", "MT Pop/Rock", "Operetta", "Pop", "Rock", "Sondheim"]
         const objArray = this.array(stylesArray)
         const newObjArray = objArray.filter(obj => obj !== undefined)
         return newObjArray
@@ -78,7 +78,7 @@ class UserShowPage extends React.Component {
                         <VictoryPie 
                             labelRadius={90} 
                             padding={5}  
-                            colorScale={["pink", "orange", "cyan", "green", "tomato", "grey"]} 
+                            colorScale={["tomato", "lightblue", "cyan", "lightgreen", "pink", "gold", "orange", "lightyellow", "lightgrey", "blue", "purple", "grey"]} 
                             data={songData} 
                         />
                      
@@ -112,7 +112,7 @@ class UserShowPage extends React.Component {
                             <VictoryPie 
                                 labelRadius={90} 
                                 padding={5}  
-                                colorScale={["lightblue", "tomato"]} 
+                                colorScale={["lightgreen", "orange"]} 
                                 data={[ 
                                 {x: "Called Back", y: calledBack},
                                 {x: "Other Auditions", y: notCalledBack}

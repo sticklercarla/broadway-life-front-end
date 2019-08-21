@@ -105,17 +105,19 @@ class AuditionForm extends React.Component {
                             value={this.state.musical_title} 
                             onChange={this.onChange} 
                             placeholder="title of show"
+                            required
                         />
                     </label>
                     <label className="audition-input">Style of Show:  
                         <select  name="style" value={this.state.style} onChange={this.onChange}>
                             <option name="style" value="Contemporary">Contemporary</option>
+                            <option name="style" value="Classical MT">Classical MT</option>
                             <option name="style" value="Disney">Disney</option>
                             <option name="style" value="Doo Wop">Doo Wop</option>
                             <option name="style" value="Golden Age">Golden Age</option>
                             <option name="style" value="Jazz Standard">Jazz Standard(American SongBook)</option>
                             <option name="style" value="Jukebox">Jukebox</option>
-                            <option name="style" value="Musical Theatre Pop/Rock">Musical Theatre Pop/Rock</option>
+                            <option name="style" value="MT Pop/Rock">MT Pop/Rock</option>
                             <option name="style" value="Operetta">Operetta</option>
                             <option name="style" value="Pop">Pop</option>
                             <option name="style" value="Rock">Rock</option>
@@ -124,7 +126,7 @@ class AuditionForm extends React.Component {
                     </label>
                     <label className="audition-input">Time of Audition:  
                         <input 
-                            
+                            required
                             type="time" 
                             name="time" 
                             value={this.state.time} 
@@ -133,7 +135,7 @@ class AuditionForm extends React.Component {
                     </label>
                     <label className="audition-input">Date of Audition:  
                         <input 
-                            
+                            required
                             type="date" 
                             name="date" 
                             value={this.state.date} 
@@ -166,7 +168,6 @@ class AuditionForm extends React.Component {
                     </label>
                     <label className="checkbox">
                         <input 
-                            
                             type="checkbox" 
                             name="appointment" 
                             value={this.state.appointment} 
@@ -177,7 +178,6 @@ class AuditionForm extends React.Component {
                     </label>
                     <label className="checkbox">
                         <input 
-                            
                             type="checkbox" 
                             name="sides" 
                             value={this.state.sides} 

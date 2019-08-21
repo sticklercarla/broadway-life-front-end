@@ -11,11 +11,11 @@ const styles = {
     animationName: Radium.keyframes(slideInUp, 'slideInUp')
   },
   slideInLeft: {
-    animation: 'x 1.3s',
+    animation: 'x 1s',
     animationName: Radium.keyframes(slideInLeft, 'slideInLeft')
   },
   slideInRight: {
-    animation: 'x 1.6s',
+    animation: 'x 1s',
     animationName: Radium.keyframes(slideInRight, 'slideInRight')
   }
 }
@@ -46,6 +46,7 @@ class Login extends Component {
         <form onSubmit={this.handleSubmit} className="login-form">
           <h2>Login</h2>
           <input
+            required
             className="login-input"
             type="text"
             onChange={this.handleChange}
@@ -54,6 +55,7 @@ class Login extends Component {
             placeholder="username"
           />
           <input
+            required
             className="login-input"
             type="password"
             onChange={this.handleChange}

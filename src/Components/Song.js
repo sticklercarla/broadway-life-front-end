@@ -48,11 +48,15 @@ class Song extends React.Component {
             <div className="song-card" >
                 {this.state.cardFlipped ? 
                 (<div>
+                    {this.props.song.video_key ? 
                     <YouTube
                         videoId={this.props.song.video_key}
                         opts={opts}
                         onReady={this._onReady}
                     />
+                    :
+                    "Please edit this song's Youtube Link (links should be copy/pasted from the url OR copied from the SHARE tab)"
+                }
                 </div>)
                 : 
                 <div>
@@ -61,7 +65,7 @@ class Song extends React.Component {
                         <EditSong song={this.props.song} handleEditClick={this.handleEditClick}/>
                     :
                         <div>
-                            <h1>{this.props.song.title}</h1>
+                            <h1>🎵{this.props.song.title}</h1>
                             <p>Composer: {this.props.song.composer}</p>
                             <p>Lyricist: {this.props.song.lyricist}</p>
                             <p>Performed By: {this.props.song.performed_by}</p>

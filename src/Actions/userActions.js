@@ -12,7 +12,8 @@ const logoutUser = () => ({
 });
 
 const createUser = user => ({
-    type: "SIGNUP"
+    type: "SIGNUP",
+    payload: user
 });
 
 const profileUser = user => ({
@@ -76,7 +77,12 @@ const createNewUserToDB = user => dispatch => {
         body: JSON.stringify(user)
     }).then(res => res.json())
     .then(data => {
-        dispatch(createUser(data.user)) 
+        if (data.errors) {
+            alert(data.errors)
+        } else {
+            localStorage.token = data.token
+            dispatch(createUser(data.user)) 
+        }
     })
 }
 
@@ -97,6 +103,8 @@ const updateUserToDB = user => dispatch => {
 const logoutUserFromStore = () => dispatch => {
     localStorage.clear();
     dispatch(logoutUser());
+    dispatch(songBook.clearSongs());
+    dispatch(allAuditions.clearAuditions());
 }
 
 

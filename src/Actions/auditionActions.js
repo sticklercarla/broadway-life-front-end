@@ -22,6 +22,10 @@ const deleteAudition = audition_id => ({
     deleted_audition_id: audition_id
 })
 
+const clearAuditions = () => ({
+    type: "CLEAR_AUDITIONS"
+})
+
 
 const createNewAuditionToDB = audition => dispatch => {
     console.log(audition)
@@ -64,6 +68,7 @@ const deleteAuditionToDB = audition_id => dispatch => {
 }
 
 export default {
+    clearAuditions,
     getAuditions,
     createNewAuditionToDB,
     updateAuditionToDB,

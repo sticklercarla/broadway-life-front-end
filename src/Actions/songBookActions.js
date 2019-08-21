@@ -17,6 +17,10 @@ const updateSong = song => {
     }
 }
 
+const clearSongs = () => ({
+    type: "CLEAR_SONGS"
+})
+
 const createNewSongToDB = song => dispatch => {
     fetch('http://localhost:3000/songs', {
         method: "POST",
@@ -49,6 +53,7 @@ const updateSongToDB = song => dispatch => {
 
 
 export default {
+    clearSongs,
     getSongs,
     createNewSongToDB,
     updateSongToDB

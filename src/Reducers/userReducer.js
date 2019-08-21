@@ -5,7 +5,7 @@ export default (state = {}, action) => {
       case "LOGIN":
         return action.payload
       case "SIGNUP":
-        return {};
+        return action.payload;
       case "PROFILE":
         return action.payload;
       case "LOGOUT":

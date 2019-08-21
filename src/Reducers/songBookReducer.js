@@ -9,6 +9,8 @@ export default (state = defaultState, action) => {
         case "UPDATE_SONG":
             const new_state = state.song_book.filter(song => (song.id !== action.new_song.id))
             return {song_book: [...new_state, action.new_song]};
+        case "CLEAR_SONGS":
+            return defaultState;
         default:
             return state;
     }
