@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  background-color: purple;
 }
 
 
@@ -23,6 +24,7 @@ header{
   font-family: 'Karla', sans-serif;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .home-page {
@@ -410,11 +412,15 @@ select {
   transform: translateY(4px);
 }
 
-.audition-button:focus {
+#audition-button:focus {
   outline: none;
 }
 
-.audition-button:active {
+#audition-button:hover {
+  background-color: lightgray;
+}
+
+#audition-button:active {
   cursor: grabbing;
   box-shadow: 1px 1px 5px black;
   transform: translateY(4px);
