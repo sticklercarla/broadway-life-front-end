@@ -7,6 +7,7 @@ import Radium, {StyleRoot} from 'radium';
  
 const styles = {
   slideInUp: {
+    animationDelay: 'x 1s',
     animation: 'x 1s',
     animationName: Radium.keyframes(slideInUp, 'slideInUp')
   },
