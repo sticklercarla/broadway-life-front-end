@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## BROADWAY LIFE
 
 Broadway Life is an audition tracker for actors. This app creates a solution for musical theatre actors for tracking important information about auditions. See how many auditions you've been on, been called back for or booked. Keep track of all the songs in your audition song book and make sure you've got material in each category. Easily add songs to your audition book and store a youtube link for reference to that song. Add and delete auditions and update them when you've received a call back or booked an audition. Keep specific notes about each audition like what went great and what went not so great. Broadway Life is here to help actors better understand how they audition and how they can improve!
