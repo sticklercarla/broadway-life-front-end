@@ -10,7 +10,7 @@ Broadway Life is an audition tracker for actors. This app creates a solution for
 
 ## Languages/Libraries/Resources
 
-React, Redux, Javascript Frontend, Rails Backend, Youtube Api, Backstage.com Api, Victory, React-Moment, Radium, React-Animations, Vanilla CSS
+React, Redux, Javascript Frontend, Rails Backend, Youtube Api, Backstage.com RSS Feed, Victory, React-Moment, Radium, React-Animations, Vanilla CSS
 
 ## RAILS BACKEND
 https://github.com/sticklercarla/broadway-life-api
