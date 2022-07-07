@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "combine-reducers": "^1.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.26",
     "radium": "^0.25.2",
     "react": "^16.8.6",
